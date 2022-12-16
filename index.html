@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles/library.css">
+</head>
+
+<body>
+    <div class="buttons-menu">
+        <button class="btn-menu">Add Book</button>
+        <button class="btn-menu">Show All Books</button>
+        <button class="btn-menu">Show Books by Number of Pages</button>
+        <button class="btn-menu">Show Books by Author</button>
+    </div>
+    <section id="add-book" hidden>
+        <header class="form-title">
+            Book Form
+        </header>
+        <form id="book_form" class="book-form-class">
+            <div class="two-inputs">
+                <input type="text" name="book_title" required placeholder="Enter book title">
+                <input type="text" name="author" placeholder="Enter author name" required>
+            </div>
+            <div class="date-label">
+                <label>Enter publishing date</label>
+                <input type="date" name="publishingDate" required id="date_input">
+
+            </div>
+            <p id="date_error" class="error"></p>
+            <div class="two-inputs">
+                <select name="genre" required>
+                    <option value hidden selected disabled>
+                        --Select Genre--
+                    </option>
+                    <option value="Epic">Epic</option>
+                    <option value="Essay">Essay</option>
+                    <option value="Story">Story</option>
+                    <option value="Play">Play</option>
+                </select>
+                <input type="number" name="pages" placeholder="Enter number of pages"
+                                    id="pages_input" required>
+
+            </div>
+            <p id="pages_error" class="error"></p>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="show-all-books" hidden>
+        <header class="form-title">
+            The Full List of Books
+        </header>
+        <ul class="books-list" id="books-all">
+
+        </ul>
+    </section>
+    <section id="show-books-pages" hidden>
+        <header class="form-title">
+            Pages Form
+        </header>
+        <form id="pages-form" class="form-class" >
+            <div class="two-inputs">
+                <input type="number" id="pageFrom" name="pagesFrom" placeholder="Enter pages 'From'"  required>
+                <input type="number" id="pageTo" name="pagesTo" placeholder="Enter pages 'To'"  required>
+            </div>
+            <div class="buttons">
+                <button type="submit">Search</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <p id="pages_form_error" class="error center"></p>
+        <ul class="books-list" id="books-pages">
+
+        </ul>
+    </section>
+    <section id="show-books-author" hidden>
+        <header class="form-title">
+            Author Form
+        </header>
+        <form id="author-form" class="author-form-class">
+            <div class="one-input">
+                <label>Author</label>
+                <input type="text" name="author-name" id="author" placeholder="Enter author name" required>
+            </div>
+            <div class="buttons">
+                <button type="submit">Search</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <ul class="books-list" id="books-author">
+
+        </ul>
+    </section>
+    <script src="src/main.js" type="module"></script>
+</body>
+
+</html>
