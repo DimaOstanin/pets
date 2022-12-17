@@ -49,13 +49,11 @@ if(event.target.dataset.action !== 'delete') return;
    const parenNode = event.target.closest('.list-group-item');
 
    const id = Number(parenNode.id);
-
+//    action option for deleting #1
 //    const index = tasks.findIndex( (task) =>task.id === id )
-
 //    console.log(tasks)
-
 //    tasks.splice(index,1);
-
+//    action option #2
    tasks = tasks.filter((task) => task.id !== id)
    saveTolocalStorage(); 
    parenNode.remove();
