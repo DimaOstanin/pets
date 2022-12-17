@@ -1,0 +1,33 @@
+
+// удаление найденного в объекте
+
+task = tasks.filter(function (task){
+    if(task.id === id){
+        return false
+    }else {
+        return true
+    }
+})
+
+tasks.filter(function (task) {
+    return task.id !== id;
+})
+
+tasks.filter( (task) => task.id !== id)
+
+/////////////////////////////////////////////////
+
+//найти нужный объект
+
+task = tasks.find(function (task){
+    if(task.id === id){
+        return true
+    }
+})
+
+tasks.find(function (task) {
+    return task.id === id;
+})
+
+tasks.find( (task) => task.id === id)
+ 
